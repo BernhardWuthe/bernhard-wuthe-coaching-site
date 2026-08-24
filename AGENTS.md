@@ -105,6 +105,23 @@ Deshalb darf kein Element, das per Reveal animiert wird, gleichzeitig ein dauerh
 python3 -m http.server 8734
 ```
 
+## Regel 6 — Absolute Adressen bei einem Domainwechsel
+
+Die Domain steht an mehreren Stellen **absolut** im Code. Wird die Website auf eine eigene
+Domain umgezogen, müssen diese Stellen alle mitgezogen werden, sonst zeigen Vorschaubilder
+und Suchmaschinen-Angaben ins Leere:
+
+- `sitemap.xml` — alle vier `<loc>`-Einträge
+- `robots.txt` — die `Sitemap:`-Zeile
+- in jeder HTML-Seite: `<link rel="canonical">`
+- in `index.html`, `fuehrungskraefte.html`, `unternehmen.html`, `termin.html`:
+  `og:url` und `og:image`
+
+Aktuelle Basis: `https://coachingbernhardwuthe.netlify.app`
+
+Zusätzlich gehört die neue Domain dann ins **Impressum** und in die **Datenschutzerklärung**
+(siehe Regel 1).
+
 ## Offene Punkte
 
 In `impressum.html` und `datenschutz.html` stehen noch `legal-todo`-Platzhalter.
