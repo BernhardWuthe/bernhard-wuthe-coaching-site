@@ -1,19 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Mobile nav toggle
+  // Mobiles Menue: Vollbild-Overlay in Navy
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
   if (navToggle && navLinks) {
+    const setzeZustand = (offen) => {
+      navLinks.classList.toggle('open', offen);
+      document.body.classList.toggle('menu-open', offen);
+      navToggle.setAttribute('aria-expanded', offen ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', offen ? 'Menü schließen' : 'Menü öffnen');
+    };
+
     navToggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      setzeZustand(!navLinks.classList.contains('open'));
     });
+
+    // Nach einem Klick auf einen Menuepunkt schliessen
     navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
+      a.addEventListener('click', () => setzeZustand(false));
     });
+
+    // Escape schliesst und gibt den Fokus zurueck
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        setzeZustand(false);
+        navToggle.focus();
+      }
+    });
+
+    // Beim Wechsel auf Desktop-Breite aufraeumen
+    const breit = window.matchMedia('(min-width: 861px)');
+    breit.addEventListener('change', (e) => { if (e.matches) setzeZustand(false); });
   }
 
   // Wiedererkennung: Karten einzeln markierbar (mehrfach auswählbar)

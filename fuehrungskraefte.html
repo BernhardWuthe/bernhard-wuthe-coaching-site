@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Für Führungskräfte, Bernhard Wuthe</title>
 <meta name="description" content="Begleitung für Führungskräfte, Unternehmer und Geschäftsführer: Selbstführung, Prioritäten, Entscheidungen, Regeneration und Neuorientierung in einem geschützten Rahmen.">
-<link rel="stylesheet" href="styles.css?v=47">
+<link rel="stylesheet" href="styles.css?v=49">
 </head>
 <body>
 
@@ -14,16 +14,21 @@
 <header class="site-header">
   <nav class="nav">
     <a href="index.html" class="wordmark">Bernhard Wuthe</a>
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6H19M3 11H19M3 16H19" stroke="#221F1B" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="hauptmenue">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="hauptmenue">
       <li><a href="fuehrungskraefte.html">Für Führungskräfte</a></li>
       <li><a href="unternehmen.html">Für Unternehmen</a></li>
       <li><a href="index.html#ueber-mich">Über mich</a></li>
       <li><a href="index.html#kontakt">Kontakt</a></li>
       <li class="nav-cta">
         <a href="termin.html" class="btn btn--primary">Vertrauliches Erstgespräch anfragen <span class="arrow">→</span></a>
+      </li>
+      <li class="nav-contact">
+        <span class="nav-contact-label">Direkt erreichbar</span>
+        <a href="tel:+491713888108">0171 / 38 88 108</a>
+        <a href="mailto:praxis@bernhard-wuthe.de">praxis@bernhard-wuthe.de</a>
       </li>
     </ul>
   </nav>
@@ -242,6 +247,6 @@
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script src="script.js?v=47"></script>
+<script src="script.js?v=49"></script>
 </body>
 </html>
