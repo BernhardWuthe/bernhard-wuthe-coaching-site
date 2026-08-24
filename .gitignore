@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editoren
+.vscode/
+.idea/
+*.swp
+
+# Bild-Originale (unkomprimiert, gehoeren nicht ins Deployment)
+originale/
+*.psd
+*.tiff
