@@ -988,6 +988,7 @@ body.menu-open .nav-toggle-bars span:nth-child(3){ transform: translateY(-7px) r
   color: var(--ink-soft);
   line-height: 1.55;
 }
+.method-quote + .method-quote{ margin-top: 20px; }
 .method-highlight{
   display: inline-flex;
   align-items: center;
