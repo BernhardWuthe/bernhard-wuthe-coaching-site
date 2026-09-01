@@ -1225,6 +1225,11 @@ body.menu-open .nav-toggle-bars span:nth-child(3){ transform: translateY(-7px) r
   object-fit: cover;
   object-position: center 42%;
 }
+/* Ab Desktop-Breite tiefer ins Bild: zeigt beide Sessel vollstaendig statt nur Bildoberkanten.
+   Mobile bleibt unveraendert, dort passt der Ausschnitt bereits. */
+@media (min-width: 861px){
+  .closing-media img{ object-position: center 64%; }
+}
 .closing{ text-align: center; }
 .closing .section-head{ margin-inline: auto; margin-top: 40px; }
 .closing .lede{ margin-inline: auto; margin-bottom: 40px; }
